@@ -6,7 +6,7 @@ handling the API- CURL based call for provisioning from client side on SDS block
 
 From the client machine the user need to run the curl and get the vol created as,
 
-curl -H 'Content-Type: application/json' -X POST -d '{"volume":"apivol13","pool":"cephclient","size":2}' http://10.59.18.42:5000/volume ( endpoint app will be dockerized )
+curl -H 'Content-Type: application/json' -X POST -d '{"volume":"apivol13","pool":"cephclient","size":2}' http://0.0.0.0:5000/volume ( endpoint app will be dockerized )
 
 output:
 
@@ -14,16 +14,16 @@ output:
 
 On server end the app will excute :
 
-[root@uidlx1005 RBD]# python runapp.py
+# python runapp.py
 
 Serving Flask app "runapp" (lazy loading)
 Environment: production WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
 Debug mode: on
-Running on http://10.59.18.42:5000/ (Press CTRL+C to quit)
+Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
 Restarting with stat
 Debugger is active!
 Debugger PIN: 399-938-108 apivol13 cephclient 2 Connected to the cluster.
-Creating a context for the 'data' pool 10.59.18.43 - - [12/Oct/2019 07:47:33] "POST /volume HTTP/1.1" 200 -
+Creating a context for the 'data' pool 0.0.0.0 - -  "POST /volume HTTP/1.1" 200 -
 
 User permissions needed:
 
